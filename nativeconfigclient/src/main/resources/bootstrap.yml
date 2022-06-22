@@ -1,0 +1,11 @@
+# 服务名需要用 -横杠 跟active连接对应起来才能对应找到配置中心完整的配置文件
+# 通过spring.application.name 结合 spring.profiles.active拼接目标配置文件名，configclient-dev.yml，去Config Server配置中心中查找该文件
+spring:
+  application:
+    name: configclient #配置中心的配置名的 -横杠 前缀
+  profiles:
+    active: dev #配置中心的配置名的 -横杠 后缀
+  cloud:
+    config:
+      uri: http://localhost:8762 #本地Config Server配置中心的url访问地址
+      fail-fast: true #设置客户端优先判断Config Server获取是否正常
