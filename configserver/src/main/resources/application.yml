@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zheng510ke/springcloud.git #设置远程仓库的地址
+          searchPaths: config #设置配置所在的路径
+          username: zheng510ke@qq.com #仓库账号密码
+          password: zk459783017
+      label: master
+eureka:
+  client:
+    serviceUrl: #service-url 都可以
+      defaultZone: http://localhost:8761/eureka/
